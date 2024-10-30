@@ -1,10 +1,10 @@
-name: Terraform CI/CD Pipeline for deployment
-run-name: ${{ github.actor }} has triggered the pipeline
+name: Terraform CI/CD Pipeline for infrastructure deployment
+run-name: ${{ github.actor }} has triggered the pipeline #detects users triggering the pipeline
 on:
   push:
     branches:
-      - feature
-env:
+      - 'feature'
+env: #variables authenticates to the pipeline
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 jobs:
