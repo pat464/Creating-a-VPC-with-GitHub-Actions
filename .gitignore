@@ -1,0 +1,11 @@
+*.terraform
+*.tfstate
+*.tfstate.*
+.tfstate.backup
+#keep .terraform.lock.hcl
+!.terraform.lock.hcl
+*.log
+*.json
+**/.terraform
+#keep all .tf files
+!*.tf
