@@ -11,7 +11,9 @@ env: #environment variables
 jobs:
   Infra-automation:
     - name: CI/CD Deployment
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest# Remove the .terraform directory physically (optional)
+    Remove-Item -Recurse -Force Tf-VPC/.terraform/
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
