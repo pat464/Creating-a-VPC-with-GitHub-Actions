@@ -3,15 +3,14 @@ run-name: ${{ github.actor }} has triggered the pipeline
 on:
   push:
     branches:
-      - 'feature'
+      - feature
 env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 jobs:
   Infra-automation:
     name: CI/CD Deployment
-    runs-on: ubuntu-latest# Remove the .terraform directory physically (optional)
-    Remove-Item -Recurse -Force Tf-VPC/.terraform/
+    runs-on: ubuntu-latest
     
     steps:
     - name: Checkout code
@@ -25,7 +24,7 @@ jobs:
     - name: Terraform Validate
       id: validate
       run: terraform validate
-      working-directory: TC-VPC
+      working-directory: Tf-VPC
     - name: Terraform Plan
       run: terraform plan
       working-directory: Tf-VPC
