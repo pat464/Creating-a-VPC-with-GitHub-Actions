@@ -3,4 +3,4 @@
 .tfstate.backup
 *.log
 *.json
-modules\
+**/.terraform
